@@ -1,5 +1,5 @@
-;(function(win) {
-    // return true if the objects are different
+;(function() {
+    // returns true if the objects are different
     //        false if the same
     function _diff (oldObj, newObj, path, acc) {
 
@@ -36,7 +36,7 @@
         // dealing with object
         if (typeof oldObj === 'object') {
 
-            // newObj is array
+            // if newObj is array
             if (Array.isArray(newObj)) {
                 acc.push(path);
                 return true;
@@ -122,7 +122,6 @@
     }
 
     // returns array of paths to changes
-    // objects are the same
     function diff(a, b, options) {
         var arr = [];
         options = options || {};
@@ -136,13 +135,12 @@
         return arr;
     }
 
-    if (win.no) {
-        no.diff = diff;
-    }
 
     ns.Model.prototype.setDataDiff = function (data, options) {
+        // compute diff
         var _diff = diff(this.getData(), data);
 
+        // iterate over generated diff paths
         for (var i = _diff.length, propValue; i-- !=0;) {
             propValue = _diff[i];
             if (propValue === '') continue;
@@ -162,4 +160,8 @@
         }
     }
 
-})(window);
+    if (module && module.exports) {
+        module.exports = diff;
+    }
+
+})();

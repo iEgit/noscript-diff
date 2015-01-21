@@ -48,7 +48,7 @@ a.on('ns-model-changed', function function_name () {
 //["ns-model-changed", ".c.d"]
 //["ns-model-changed", ".c.b"]
 //["ns-model-changed", ".b"]
-  console.log(arguments); // logs e and jpath
+  console.log(arguments);
 })
 
 ```
