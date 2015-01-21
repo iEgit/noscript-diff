@@ -1,0 +1,9 @@
+{
+  "name": "noscript-diff",
+  "version": "0.0.1",
+  "description": "Noscript plugin to make smart setData and other",
+  "repository": "https://github.com/iEgit/noscript-diff",
+  "license": "MIT License",
+  "author": "Egor Kopylov <koegit@gmail.com> (https://github.com/iEgit)"
+  }
+}
